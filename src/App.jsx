@@ -1,11 +1,20 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Blog from './components/Blog/Blog';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
+import createRandomUser from './Data/Data';
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    let users = [];
+    for (let i = 0; i < 5; i++) {
+      const user = createRandomUser();
+      users.push(user);
+    }
+    setData(users);
+  }, []);
+  console.log('data :>> ', data);
   return (
     <div className=' max-w-screen-xl   mx-auto   '>
       <div className='mx-3'>
