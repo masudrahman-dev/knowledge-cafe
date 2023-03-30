@@ -16,16 +16,16 @@ const createRandomUser = () => {
   const sex = faker.name.sexType();
   const firstName = faker.name.firstName(sex);
   const lastName = faker.name.lastName();
-  const blog_title = faker.lorem.sentence(10);
+  const blog_title = faker.lorem.sentence();
   const blog_cover_image = faker.image.sports(640, 480, true);
   const date_time = faker.date.between(
-    '2020-01-01T00:00:00.000Z',
+    '2022-01-01T00:00:00.000Z',
     '2023-01-01T00:00:00.000Z'
   );
 
   return {
     _id: faker.datatype.uuid(),
-    authorImage: faker.image.avatar(),
+    author_image: faker.image.avatar(),
     firstName,
     lastName,
     sex,

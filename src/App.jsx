@@ -8,7 +8,7 @@ function App() {
   const [data, setData] = useState([]);
   useEffect(() => {
     let users = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
       const user = createRandomUser();
       users.push(user);
     }
@@ -21,9 +21,7 @@ function App() {
         <Header></Header>
         <div className='grid grid-cols-1 md:grid-cols-12 gap-7 '>
           <div className='md:col-span-6 lg:col-span-7 xl:col-span-8'>
-            <Blog></Blog>
-            <Blog></Blog>
-            <Blog></Blog>
+            {data.map(blog => <Blog key={blog._id} blog={blog}></Blog>)}
           </div>
           <div className='md:col-span-6 lg:col-span-5 xl:col-span-4'>
             <Sidebar></Sidebar>
