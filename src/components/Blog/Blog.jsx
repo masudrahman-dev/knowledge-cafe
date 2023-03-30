@@ -2,12 +2,13 @@ import React from 'react';
 
 const Blog = () => {
   return (
-    <div>
+    <div className='border'>
       <div className='card bg-base-100 shadow-xl'>
         <figure>
           <img
             src='	https://source.unsplash.com/user/c_v_r/1600x900'
             alt='Shoes'
+            className='h-54'
           />
         </figure>
         <div className='card-body'>

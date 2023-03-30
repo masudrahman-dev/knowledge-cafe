@@ -7,11 +7,15 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className=' max-w-screen-xl  mx-auto bg-white shadow-md  '>
+    <div className=' max-w-screen-xl  mx-auto  shadow-md  '>
       <Header></Header>
-      <div className='flex '>
-        <Blog></Blog>
-        <Sidebar></Sidebar>
+      <div className='grid grid-cols-12 gap-7'>
+        <div className='col-span-8'>
+          <Blog></Blog>
+        </div>
+        <div className='col-span-4'>
+          <Sidebar></Sidebar>
+        </div>
       </div>
     </div>
   );
