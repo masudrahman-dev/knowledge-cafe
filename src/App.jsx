@@ -7,9 +7,9 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div>
+    <div className=' max-w-screen-xl  mx-auto bg-white shadow-md  '>
       <Header></Header>
-      <div>
+      <div className='flex '>
         <Blog></Blog>
         <Sidebar></Sidebar>
       </div>
