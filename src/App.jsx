@@ -24,15 +24,18 @@ function App() {
                 post={post}
               ></Post>
             ))}
-
           </div>
           <div className='md:col-span-6 lg:col-span-5 xl:col-span-4'>
             <Sidebar></Sidebar>
           </div>
-          <div>
-            <Blog></Blog>
-          </div>
         </div>
+
+        {data.map((blog) => (
+          <Blog
+            key={blog._id}
+            blog={blog}
+          ></Blog>
+        ))}
       </div>
     </div>
   );
