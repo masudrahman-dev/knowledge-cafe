@@ -14,7 +14,6 @@ const Blog = (props) => {
   } = props.blog;
 
   const date = date_time;
-  // const date = new Date("Mon Aug 24 2020 02:49:05 GMT+0600");
   const currentDate = new Date();
   const timeDiff = currentDate.getTime() - date.getTime(); // Get the time difference in milliseconds
   const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24)); // Convert milliseconds to days and round down
@@ -23,16 +22,12 @@ const Blog = (props) => {
   const dayString = dayDiff === 1 ? '1 Day ago' : `${dayDiff} Days ago`; // Format the day difference as a string
   const formattedDate = `${month} ${day} (${dayString})`;
   console.log(formattedDate); // Output: "Aug 24 (581 Days ago)" (assuming the current date is March 14, 2023)
-  
-
-
-
-
-
-
-
-
-
+  // reading time
+  const now = new Date();
+  const randomMinutes = Math.floor(Math.random() * 11) + 5; // Generate a random number between 5 and 15
+  const randomDate = new Date(now.getTime() + randomMinutes * 60000); // Add the random number of minutes to the current time in milliseconds
+  const randomMinutesOnly = randomDate.getMinutes(); // Get the minutes component of the random date
+  console.log(randomMinutesOnly); // Output: e.g. "47" (assuming the random date has minutes component of 47)
 
   return (
     <div className=' mb-10'>
@@ -62,8 +57,8 @@ const Blog = (props) => {
               </div>
             </div>
             <div>
-              <p className=''>
-                12 min read{' '}
+              <p className='text-lg'>
+                {randomMinutesOnly} min read{' '}
                 <span className=' btn btn-ghost'>
                   <FontAwesomeIcon
                     icon={faBookmark}
