@@ -6,7 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const Post = (props) => {
   const notify = () => toast('All Ready Marked.');
 
-  console.log('props :>> ', props);
+  // console.log('props :>> ', props);
   const {
     author_image,
     blog_cover_image,
@@ -16,7 +16,7 @@ const Post = (props) => {
     published_time,
     read_time,
   } = props.post;
-
+  const { addMinute } = props;
   return (
     <div className=' mb-10'>
       <div className='card bg-base-100 shadow-xl leading-10 border'>
@@ -43,16 +43,18 @@ const Post = (props) => {
               </div>
             </div>
             <div>
-              <p className='text-lg'>
-                {read_time} min read{' '}
-                <span className=' btn btn-ghost'>
-                  <FontAwesomeIcon
-                    icon={faBookmark}
-                    bounce
-                    size='xl'
-                  />
-                </span>
-              </p>
+              <button onClick={() => addMinute(read_time)}>
+                <p className='text-lg'>
+                  {read_time} min read{' '}
+                  <span className=' btn btn-ghost'>
+                    <FontAwesomeIcon
+                      icon={faBookmark}
+                      bounce
+                      size='xl'
+                    />
+                  </span>
+                </p>
+              </button>
             </div>
           </div>
           <h1 className='text-xl md:text-2xl font-bold '>{blog_title}</h1>

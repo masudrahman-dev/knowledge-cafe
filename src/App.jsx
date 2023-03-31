@@ -10,7 +10,14 @@ function App() {
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
-  console.log('data :>> ', data);
+  // console.log('data :>> ', data);
+  // let totalReadTime = 0;
+  // const { readTime, setReadTime } = useState([]);
+  const addMinute = (minute) => {
+    // console.log('minute :>> ', minute);
+    // totalReadTime += parseInt(minute);
+    // setReadTime( minute);
+  };
   return (
     <div className=' max-w-screen-xl   mx-auto   '>
       <div className='mx-3'>
@@ -19,13 +26,14 @@ function App() {
           <div className='md:col-span-6 lg:col-span-7 xl:col-span-8'>
             {data.map((post) => (
               <Post
+                addMinute={addMinute}
                 key={post._id}
                 post={post}
               ></Post>
             ))}
           </div>
           <div className='md:col-span-6 lg:col-span-5 xl:col-span-4'>
-            <Sidebar></Sidebar>
+            <Sidebar ></Sidebar>
           </div>
         </div>
 
