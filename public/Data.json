@@ -6,7 +6,8 @@
         "lastName": "Ward",
         "blog_title": "Sunt corporis est eligendi quo ut quia quo placeat.",
         "blog_cover_image": "https://picsum.photos/640/480?random=296",
-        "date_time": "2023-02-13T03:48:47.607Z",
+        "published_time": "Mar 14 (4 Days ago)",
+        "read_time": "9",
         "question": "Props vs state?",
         "answer": "In React, props and state are two concepts used to manage data and communicate between components. props  are passed down from a parent component to a child component as an object. They are read-only and cannot be modified by the child component. The parent component is responsible for updating the props if needed, and any changes to props in the parent component will cause the child component to re-render with the updated values."
       },
@@ -18,7 +19,8 @@
   "lastName": "Davies",
   "blog_title": "Expedita excepturi eveniet explicabo facilis ut enim consectetur nostrum.",
   "blog_cover_image": "https://picsum.photos/640/480?random=418",
-  "date_time": "2023-01-08T21:57:56.330Z",
+  "published_time": "Mar 16 (6 Days ago)",
+  "read_time": "7",
   "question": "How does useState work?",
   "answer": "useState is a function that is part of the React library in JavaScript. It is used to declare a state variable in a functional component, allowing you to manage the state of your application. The useState function takes an initial state value as an argument and returns an array of two elements: the current state value and a function to update the state value."
 },
@@ -29,7 +31,8 @@
     "lastName": "Parker",
     "blog_title": "Sed quia odio est quasi est.",
     "blog_cover_image": "https://picsum.photos/640/480?random=127",
-    "date_time": "2023-02-07T11:02:38.450Z",
+    "published_time": "Mar 20 (8 Days ago)",
+    "read_time": "6",
     "question": "Purpose of useEffect other than fetching data.",
     "answer": "The useEffect hook in React is commonly used for fetching data, but it has many other uses as well. Here are some common scenarios where useEffect can be used.Updating the document title: You can use useEffect to update the document title when the component mounts or when certain dependencies change. Managing subscriptions: If your component needs to subscribe to an external event, such as a WebSocket or a pub/sub messaging system, you can use useEffect to manage the subscription and unsubscribe when the component unmounts. Updating a component's state based on props: If your component's state needs to be updated based on changes in its props, you can use useEffect to update the state when the props change. Handling user input or other events: You can use useEffect to handle user input or other events, such as scroll or resize events, and update the component's state accordingly. Triggering animations or other visual effects: If your component needs to trigger animations or other visual effects based on changes in its state or props, you can use useEffect to update the component's DOM when the state or props change."
   },
@@ -40,7 +43,8 @@
     "lastName": "Lee",
     "blog_title": "Numquam cum est rerum placeat aut sed suscipit.",
     "blog_cover_image": "https://picsum.photos/640/480?random=300",
-    "date_time": "2023-01-13T04:47:25.450Z",
+    "published_time": "Mar 22 (10 Days ago)",
+    "read_time": "5",
     "question": "How Does React work?",
     "answer": " React is designed to help developers build large, complex applications with data that changes over time. At a high level, React works by allowing developers to define reusable UI components. These components are composed of HTML-like syntax called JSX, which allows developers to easily mix HTML and JavaScript code. React then takes these components and renders them into the DOM, updating the UI as needed. One of the key features of React is its virtual DOM. Instead of manipulating the real DOM directly, React creates a virtual representation of the DOM in memory. When data changes, React compares the virtual DOM with the real DOM and only updates the parts that have changed. This makes React very fast and efficient, even for complex UIs with lots of data.React also supports a concept called state. State is a way to store and manage data that changes over time within a component. When state changes, React will automatically re-render the component and update the UI accordingly. Finally, React can be used in conjunction with other tools and libraries to build complete applications. For example, developers often use React with a state management library like Redux, or a routing library like React Router. Additionally, React can be used with server-side rendering frameworks like Next.js to build full-stack web applications."
 

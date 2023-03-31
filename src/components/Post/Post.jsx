@@ -13,8 +13,8 @@ const Post = (props) => {
     blog_title,
     firstName,
     lastName,
-    date_time,
-    sex,
+    published_time,
+    read_time,
   } = props.post;
 
   return (
@@ -39,12 +39,12 @@ const Post = (props) => {
                 <h4 className='text-2xl font-semibold tracking-wide'>
                   Mr. {firstName} {lastName}
                 </h4>
-                {/* <p>{formattedDate}</p> */}
+                <p>{published_time}</p>
               </div>
             </div>
             <div>
               <p className='text-lg'>
-                {/* {randomMinutesOnly} min read{' '} */}
+                {read_time} min read{' '}
                 <span className=' btn btn-ghost'>
                   <FontAwesomeIcon
                     icon={faBookmark}
