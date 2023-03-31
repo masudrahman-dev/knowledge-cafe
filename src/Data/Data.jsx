@@ -11,7 +11,7 @@ import { faker } from '@faker-js/faker/locale/en_US';
 // };
 
 // export default Data;
-
+let title = [];
 const createRandomUser = () => {
   const sex = faker.name.sexType();
   const firstName = faker.name.firstName(sex);
@@ -32,6 +32,11 @@ const createRandomUser = () => {
     blog_title,
     blog_cover_image,
     date_time,
+    // getBlogTitle: (t) => {
+    //   title.push(t);
+    //   console.log('title :>> ', title);
+    //   return title;
+    // },
   };
 };
 // let users = [];

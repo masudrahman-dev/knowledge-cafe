@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-regular-svg-icons';
 const Blog = (props) => {
-  console.log('props :>> ', props.blog);
+  // const { getBlogTitle } = props.blog;
   const {
     author_image,
     blog_cover_image,
@@ -21,13 +21,15 @@ const Blog = (props) => {
   const day = date.getDate(); // Get the day of the month
   const dayString = dayDiff === 1 ? '1 Day ago' : `${dayDiff} Days ago`; // Format the day difference as a string
   const formattedDate = `${month} ${day} (${dayString})`;
-  console.log(formattedDate); // Output: "Aug 24 (581 Days ago)" (assuming the current date is March 14, 2023)
+  // console.log(formattedDate); // Output: "Aug 24 (581 Days ago)" (assuming the current date is March 14, 2023)
   // reading time
   const now = new Date();
   const randomMinutes = Math.floor(Math.random() * 11) + 5; // Generate a random number between 5 and 15
   const randomDate = new Date(now.getTime() + randomMinutes * 60000); // Add the random number of minutes to the current time in milliseconds
   const randomMinutesOnly = randomDate.getMinutes(); // Get the minutes component of the random date
-  console.log(randomMinutesOnly); // Output: e.g. "47" (assuming the random date has minutes component of 47)
+  // console.log(randomMinutesOnly); // Output: e.g. "47" (assuming the random date has minutes component of 47)
+
+
 
   return (
     <div className=' mb-10'>
@@ -74,9 +76,12 @@ const Blog = (props) => {
             <span>#beginners</span> <span>#programming</span>
           </p>
           <div>
-            <p className='underline text-xl tracking-wide btn btn-ghost -ml-3'>
-              Mark as read{' '}
-            </p>
+            <button
+              onClick={() => getBlogTitle(blog_title)}
+              className='btn btn-ghost -ml-3 underline text-xl tracking-wide'
+            >
+              Mark as read
+            </button>
           </div>
         </div>
       </div>
