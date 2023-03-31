@@ -6,7 +6,7 @@ import Blog from './components/Blog/Blog';
 function App() {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch('../public/Data.json')
+    fetch('Data.json')
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);

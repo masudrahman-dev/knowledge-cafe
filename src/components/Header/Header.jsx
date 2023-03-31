@@ -9,7 +9,13 @@ const Header = () => {
         </a>
       </h1>
 
-      <div>
+      <div className='flex  gap-5 items-center'>
+        <ul className='text-xl flex gap-5'>
+          <li><a href="">Home</a></li>
+          <li><a href="">Blog</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
         <label
           tabIndex={0}
           className='btn btn-ghost btn-circle avatar'
