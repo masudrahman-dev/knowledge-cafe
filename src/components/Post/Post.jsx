@@ -1,7 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-regular-svg-icons';
+import toast, { Toaster } from 'react-hot-toast';
+
 const Post = (props) => {
+  const notify = () => toast('All Ready Marked.');
+
   console.log('props :>> ', props);
   const {
     author_image,
@@ -57,11 +61,13 @@ const Post = (props) => {
           </p>
           <div>
             <button
-              // onClick={() => getBlogTitle(blog_title)}
+              onClick={notify}
               className='btn btn-ghost -ml-3 underline text-xl tracking-wide'
             >
               Mark as read
             </button>
+
+            <Toaster />
           </div>
         </div>
       </div>
