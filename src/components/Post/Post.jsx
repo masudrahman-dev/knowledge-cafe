@@ -21,7 +21,7 @@ const Post = (props) => {
   const { countBlogTitle } = props;
   return (
     <div className=' mb-10'>
-      <div className='card bg-base-100 shadow-xl leading-10 border'>
+      <div className='card  dark:text-slate-100 dark:bg-slate-700 shadow-xl leading-10 '>
         <div className=' mx-8 mt-8 border-3'>
           <img
             src={blog_cover_image}
