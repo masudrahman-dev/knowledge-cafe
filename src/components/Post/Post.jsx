@@ -8,6 +8,7 @@ const Post = (props) => {
 
   // console.log('props :>> ', props);
   const {
+    _id,
     author_image,
     blog_cover_image,
     blog_title,
@@ -16,7 +17,8 @@ const Post = (props) => {
     published_time,
     read_time,
   } = props.post;
-  const { addMinute } = props;
+  const { countMinute } = props;
+  const { countBlogTitle } = props;
   return (
     <div className=' mb-10'>
       <div className='card bg-base-100 shadow-xl leading-10 border'>
@@ -43,7 +45,7 @@ const Post = (props) => {
               </div>
             </div>
             <div>
-              <button onClick={() => addMinute(read_time)}>
+              <button onClick={() => countMinute(read_time)}>
                 <p className='text-lg'>
                   {read_time} min read{' '}
                   <span className=' btn btn-ghost'>
@@ -63,7 +65,10 @@ const Post = (props) => {
           </p>
           <div>
             <button
-              onClick={notify}
+              onClick={() => {
+                countBlogTitle(blog_title);
+                notify();
+              }}
               className='btn btn-ghost -ml-3 underline text-xl tracking-wide'
             >
               Mark as read

@@ -3,21 +3,27 @@ import Post from './components/Post/Post';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Blog from './components/Blog/Blog';
+import { faker } from '@faker-js/faker/locale/en_US';
 function App() {
   const [data, setData] = useState([]);
+  const [readTime, setReadTime] = useState(0);
+  // const [readTime, setReadTime] = useState([]);
+  const [blogTitle, setBlogTitle] = useState([]);
   useEffect(() => {
     fetch('Data.json')
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
-  // console.log('data :>> ', data);
-  // let totalReadTime = 0;
-  // const { readTime, setReadTime } = useState([]);
-  const addMinute = (minute) => {
-    // console.log('minute :>> ', minute);
-    // totalReadTime += parseInt(minute);
-    // setReadTime( minute);
+
+  const countMinute = (minute) => {
+    setReadTime(readTime + Number(minute));
   };
+  const countBlogTitle = (blog_title) => {
+    let newBlogTitle = [...blogTitle, blog_title];
+    // setReadTime(readTime + Number(minute));
+    setBlogTitle(newBlogTitle);
+  };
+  // console.log('blogTitle :>> ', blogTitle);
   return (
     <div className=' max-w-screen-xl   mx-auto   '>
       <div className='mx-3'>
@@ -26,14 +32,15 @@ function App() {
           <div className='md:col-span-6 lg:col-span-7 xl:col-span-8'>
             {data.map((post) => (
               <Post
-                addMinute={addMinute}
+                countBlogTitle={countBlogTitle}
+                countMinute={countMinute}
                 key={post._id}
                 post={post}
               ></Post>
             ))}
           </div>
           <div className='md:col-span-6 lg:col-span-5 xl:col-span-4'>
-            <Sidebar ></Sidebar>
+            <Sidebar readTime={readTime} blogTitle={blogTitle}></Sidebar>
           </div>
         </div>
 
