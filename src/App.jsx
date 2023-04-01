@@ -26,14 +26,14 @@ function App() {
   const notify = (id) => {
     setToastAlert([...toastAlert, id]);
 
-    const alertId = toastAlert.find(toaster => toaster === id)
+    const alertId = toastAlert.find((toaster) => toaster === id);
     if (alertId === id) {
       toast('All Ready Marked.');
     }
   };
   return (
     <div className=' max-w-screen-xl   mx-auto   '>
-      <div className='mx-3'>
+      <div className='px-3'>
         <Toaster />
         <Header></Header>
         <div className='grid grid-cols-1 md:grid-cols-12 gap-7 '>

@@ -3,7 +3,7 @@ import React from 'react';
 const Sidebar = ({ readTime,blogTitle }) => {
 
   return (
-    <div className=' '>
+    <div>
       <h2 className=' border dark:text-slate-100 rounded-lg  py-7 text-center text-xl md:text-2xl font-bold tracking-wide '>
         Spent time on read : {readTime} min
 
@@ -16,11 +16,6 @@ const Sidebar = ({ readTime,blogTitle }) => {
           {blogTitle.map((title,inx) => (
             <li key={inx} className=' bg-slate-100 dark:bg-slate-700  mb-5 rounded-lg p-5'>{title}</li>
           ))}
-
-         {/* <li className='bg-slate-500  mb-5 rounded-lg p-5'>
-            Master Microsoft Power Platform and Become an In-Demand!
-          </li> */}
-         
         </ul>
       </div>
     </div>
