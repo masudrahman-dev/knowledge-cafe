@@ -4,8 +4,6 @@ import { faBookmark } from '@fortawesome/free-regular-svg-icons';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Post = (props) => {
-  const notify = () => toast('All Ready Marked.');
-
   // console.log('props :>> ', props);
   const {
     _id,
@@ -19,6 +17,8 @@ const Post = (props) => {
   } = props.post;
   const { countMinute } = props;
   const { countBlogTitle } = props;
+  const { notify } = props;
+  // console.log('notify :>> ', notify);
   return (
     <div className=' mb-10'>
       <div className='card  dark:text-slate-100 dark:bg-slate-700 shadow-xl leading-10 '>
@@ -45,7 +45,12 @@ const Post = (props) => {
               </div>
             </div>
             <div>
-              <button onClick={() => countMinute(read_time)}>
+              <button
+                onClick={() => {
+                  countBlogTitle(blog_title);
+                  notify(_id);
+                }}
+              >
                 <p className='text-lg'>
                   {read_time} min read{' '}
                   <span className=' btn btn-ghost'>
@@ -65,16 +70,11 @@ const Post = (props) => {
           </p>
           <div>
             <button
-              onClick={() => {
-                countBlogTitle(blog_title);
-                notify();
-              }}
+              onClick={() => countMinute(read_time)}
               className='btn btn-ghost -ml-3 underline text-xl tracking-wide'
             >
               Mark as read
             </button>
-
-            <Toaster />
           </div>
         </div>
       </div>

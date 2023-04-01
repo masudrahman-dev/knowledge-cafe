@@ -35,7 +35,7 @@
     "blog_cover_image": "https://picsum.photos/640/480?random=127",
     "published_time": "Mar 20 (8 Days ago)",
     "read_time": "6",
-    "question": "How does useState work?",
+    "question": "Purpose of useEffect other than fetching data.",
     "answer_example": "useEffect(()={}, [<dependency>])",
     "answer": "The useEffect hook in React has a variety of purposes beyond just fetching data. Some examples here: 1. Updating the document title, 2.Subscribing to events:like mouse clicks, key presses, or scrolling etc. 3.Animations:  use useEffect to trigger animations when certain conditions are met, such as when a component mounts or when a certain value changes, 4.Modifying the DOM: directly modify the DOM based on changes to component state or props. 6.Managing timers: create and manage timers, like countdowns or timeouts, "
   },

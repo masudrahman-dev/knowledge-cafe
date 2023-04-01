@@ -1,8 +1,7 @@
 import React from 'react';
 
 const Sidebar = ({ readTime,blogTitle }) => {
-  // console.log('readTime :>> ', readTime);
-  console.log('blogTitle :>> ', blogTitle);
+
   return (
     <div className=' '>
       <h2 className=' border dark:text-slate-100 rounded-lg  py-7 text-center text-xl md:text-2xl font-bold tracking-wide '>

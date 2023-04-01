@@ -3,11 +3,11 @@ import Post from './components/Post/Post';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Blog from './components/Blog/Blog';
-import { faker } from '@faker-js/faker/locale/en_US';
+import toast, { Toaster } from 'react-hot-toast';
 function App() {
   const [data, setData] = useState([]);
   const [readTime, setReadTime] = useState(0);
-  // const [readTime, setReadTime] = useState([]);
+  const [toastAlert, setToastAlert] = useState([]);
   const [blogTitle, setBlogTitle] = useState([]);
   useEffect(() => {
     fetch('Data.json')
@@ -23,10 +23,18 @@ function App() {
     // setReadTime(readTime + Number(minute));
     setBlogTitle(newBlogTitle);
   };
-  // console.log('blogTitle :>> ', blogTitle);
+  const notify = (id) => {
+    setToastAlert([...toastAlert, id]);
+
+    const alertId = toastAlert.find(toaster => toaster === id)
+    if (alertId === id) {
+      toast('All Ready Marked.');
+    }
+  };
   return (
     <div className=' max-w-screen-xl   mx-auto   '>
       <div className='mx-3'>
+        <Toaster />
         <Header></Header>
         <div className='grid grid-cols-1 md:grid-cols-12 gap-7 '>
           <div className='md:col-span-6 lg:col-span-7 xl:col-span-8'>
@@ -36,11 +44,15 @@ function App() {
                 countMinute={countMinute}
                 key={post._id}
                 post={post}
+                notify={notify}
               ></Post>
             ))}
           </div>
           <div className='md:col-span-6 lg:col-span-5 xl:col-span-4'>
-            <Sidebar readTime={readTime} blogTitle={blogTitle}></Sidebar>
+            <Sidebar
+              readTime={readTime}
+              blogTitle={blogTitle}
+            ></Sidebar>
           </div>
         </div>
 
